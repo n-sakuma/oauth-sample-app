@@ -1,8 +1,14 @@
 HomesApiClient::Application.routes.draw do
 
+
+  get "welcome/index"
   get "setting" => 'setting#show', as: 'setting'
   get "setting/edit", as: 'edit_setting'
   patch "setting" => 'setting#update', as: 'update_setting'
+
+  get '/app/auth/doorkeeper/callback', to: 'sessions#create'
+  resource :sessions, only: %i(create destroy)
+  root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
