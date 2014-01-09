@@ -1,0 +1,19 @@
+<h1>Setting</h1>
+
+<table>
+  <tr>
+    <th>Name: </th>
+    <td> <%= @setting.name %> </td>
+  </tr>
+  <tr>
+    <th>OAuth ID: </th>
+    <td> <%= @setting.oauth_id %> </td>
+  </tr>
+  <tr>
+    <th>OAuth Secret</th>
+    <td> <%= @setting.oauth_secret %> </td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_setting_path %>
+

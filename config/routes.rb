@@ -1,4 +1,8 @@
 HomesApiClient::Application.routes.draw do
+
+  get "setting" => 'setting#show', as: 'setting'
+  get "setting/edit", as: 'edit_setting'
+  patch "setting" => 'setting#update', as: 'update_setting'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
