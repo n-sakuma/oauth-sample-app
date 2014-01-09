@@ -5,6 +5,13 @@ HomesApi::Application.routes.draw do
   resources :sessions, only: %i[new create destroy]
 
   root to: 'external_applications#new'
+
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1 do
+      resources :residents, only: %i(index)
+      get 'app', to: 'external_applications#show'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
