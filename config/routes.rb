@@ -1,5 +1,9 @@
 HomesApi::Application.routes.draw do
   use_doorkeeper
+
+  resources :apps, only: [:new, :create], controller: :external_applications
+
+  root to: 'external_applications#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
