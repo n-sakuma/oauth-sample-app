@@ -1,0 +1,16 @@
+<h1>Welcome</h1>
+
+<% if current_app %>
+  <p>
+    Using app: <strong><%= current_app.name %></strong>.
+    <%= link_to "change app", sessions_path, method: :delete %>
+  </p>
+
+  物件情報
+
+<% else %>
+  <p><strong>Currently not set app.</strong></p>
+  <p>
+    <%= link_to "Choose App", "/auth/doorkeeper" %>
+  </p>
+<% end %>
