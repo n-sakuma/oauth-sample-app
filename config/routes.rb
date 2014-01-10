@@ -6,6 +6,6 @@ HomesApiClient::Application.routes.draw do
   get "setting/edit", as: 'edit_setting'
   patch "setting" => 'setting#update', as: 'update_setting'
   get '/app/auth/doorkeeper/callback', to: 'sessions#create'
-  resource :sessions, only: %i(create destroy)
-  resources :residents, only: %i(index)
+  resources :sessions, only: %i(create destroy)
+  resources :residents, only: %i(index show)
 end
