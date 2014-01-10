@@ -25,7 +25,7 @@ private
   end
 
   def current_app
-    @current_app ||= ExternalApplication.find(session[:app_id]) if session[:app_id]
+    @current_app ||= ExternalApplication.find_by(id: session[:app_id]) if session[:app_id]
   end
   helper_method :current_app
 end
