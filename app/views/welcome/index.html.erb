@@ -1,3 +1,14 @@
+<style>
+  body { text-align: center; }
+  div.box {
+    width:100px;
+    height:100px;
+    margin:0 auto;
+    line-height: 100px;
+    background-color:#CCCCFF;
+  }
+</style>
+
 <h1>Welcome</h1>
 
 <% if current_app %>
@@ -10,7 +21,7 @@
 
 <% else %>
   <p><strong>Currently not set app.</strong></p>
-  <p>
-    <%= link_to "Choose App", "/auth/doorkeeper" %>
-  </p>
+    <%= link_to "/auth/doorkeeper", class: 'box' do %>
+      <div class="box">App</div>
+    <% end %>
 <% end %>
