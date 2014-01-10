@@ -8,7 +8,7 @@ HomesApi::Application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1 do
-      resources :residents, only: %i(index)
+      resources :residents, only: %i(index show)
       get 'app', to: 'external_applications#show'
     end
   end
