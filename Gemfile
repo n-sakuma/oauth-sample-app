@@ -19,6 +19,8 @@ end
 
 group :development, :test do
   gem 'pry-rails'
+
+  gem 'rspec-rails'
 end
 
 # Use unicorn as the app server
