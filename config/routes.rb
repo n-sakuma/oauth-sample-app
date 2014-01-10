@@ -1,4 +1,9 @@
 MockNextcore::Application.routes.draw do
+  resources :residents
+  namespace :api do
+    resources :residents, only: %i(index show)
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

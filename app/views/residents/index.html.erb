@@ -1,0 +1,29 @@
+<h1>Listing residents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @residents.each do |resident| %>
+      <tr>
+        <td><%= resident.name %></td>
+        <td><%= resident.address %></td>
+        <td><%= link_to 'Show', resident %></td>
+        <td><%= link_to 'Edit', edit_resident_path(resident) %></td>
+        <td><%= link_to 'Destroy', resident, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resident', new_resident_path %>
