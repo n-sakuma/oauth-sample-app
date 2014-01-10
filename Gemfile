@@ -36,6 +36,7 @@ gem 'omniauth-oauth2'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'foreman'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
