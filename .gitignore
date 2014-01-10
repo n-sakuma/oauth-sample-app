@@ -1,0 +1,9 @@
+.bundle
+vendor/bundle
+
+db/schema.rb
+tmp
+log/*.log
+
+config/database.yml
+.env
