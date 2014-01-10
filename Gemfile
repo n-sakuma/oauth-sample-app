@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'doorkeeper'
+gem 'httparty'
 
 group :development, :test do
   gem 'pry-rails'
