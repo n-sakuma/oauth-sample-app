@@ -4,7 +4,7 @@ module OmniAuth
       option :name, :doorkeeper
 
       option :client_options, {
-        site: "http://localhost:3000",
+        site: ENV['OAUTH_SITE'],
         authorize_path: "/oauth/authorize"
       }
 
