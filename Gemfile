@@ -21,6 +21,9 @@ group :development, :test do
   gem 'pry-rails'
 
   gem 'rspec-rails'
+  gem 'timecop'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
 end
 
 # Use unicorn as the app server
