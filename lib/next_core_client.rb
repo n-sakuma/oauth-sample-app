@@ -5,7 +5,7 @@ class NextCoreClient
   API_SIG=""
 
   def initialize(url, params={})
-    @url = URI.parse(url)
+    @url = Addressable::URI.parse(url)
     @parameter = set_query(params)
     @api_sig = generate_signature
   end

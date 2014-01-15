@@ -3,7 +3,7 @@ require 'spec_helper'
 describe NextCoreClient do
   describe '#set_query (private)' do
     let!(:request_time){Time.now}
-    let(:client){NextCoreClient.new(url) }
+    let(:client) { NextCoreClient.new(url)}
     before do
       Timecop.freeze(request_time)
     end
@@ -15,9 +15,15 @@ describe NextCoreClient do
     end
 
     context 'クエリの順番に関して' do
-      let!(:url) {'http://sample.com/aaa/bbb?xxx=aa&aaa=zz&ZZZ=zzz&BBB=bbb' }
+      let(:url) {'http://sample.com/aaa/bbb?xxx=aa&aaa=zz&ZZZ=zzz&BBB=bbb' }
       subject {client.instance_variable_get(:@parameter) }
       it {should == "BBB=bbb&ZZZ=zzz&aaa=zz&timestamp=#{request_time.to_i}&xxx=aa&api_key=#{NextCoreClient::API_KEY}"}
+    end
+
+    context 'URLエンコードに関して' do
+      let(:url) {'http://sample.com/aaa/bbb?aaa=あああ' }
+      subject {client.instance_variable_get(:@parameter) }
+      it {should == "aaa=%E3%81%82%E3%81%82%E3%81%82&timestamp=#{request_time.to_i}&api_key=#{NextCoreClient::API_KEY}"}
     end
 
     after do
